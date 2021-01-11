@@ -23,9 +23,15 @@ def read_data(filePath,type):
     if type=="pickle":
         with open(filePath,'rb') as f:
             return pickle.load(f)
+
+    elif type=="dill":
+        with open(filePath,'rb') as f:
+            return dill.load(f)
+    
     elif type =="json":
         with open(filePath,'r') as f:
             return json.load(f)
+    
     elif type == "txt":
         result = []
         with open(filePath,'r') as f:
@@ -101,20 +107,23 @@ class Raw_Data_Loader():
         
 
 class Seq_Data_Loader():
+    
+    seq_dir_path = "..\\data\\generated_data\\generate.txt" 
 
     def __init__(self,baseline_model):
         self.baseline_model=baseline_model
         self.seqs = []
         
-        w2i_path = "..\\..\\data\\pickle\\"+baseline_model+"\\w2i.pickle"
+        w2i_path = "..\\data\\pickle\\"+baseline_model+"\\w2i.pickle"
         self.w2i = read_data(w2i_path,"pickle")
 
     def create_seq(self,enumerateVizs,path=""):
         # read sequence file
 
-        seq_dir_path = "..\\..\\data\\generated_data\\generate" if path =="" else path
+        if path!="":
+            self.seq_dir_path = path
 
-        data = read_data(seq_dir_path,"txt")
+        data = read_data(self.seq_dir_path,"txt")
         data = [np.reshape(seq,(-1,2)) for seq in data if len(seq)%2==0]
 
         charts_indices = [[self.attrIdx2visIdx(attrIdxs,enumerateVizs) for attrIdxs in seq] for seq in data] 
