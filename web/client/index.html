@@ -25,9 +25,9 @@
   <script type="text/javascript" src="index.js"></script>
   <script type="text/javascript" src="util.js"></script>
   <script type="text/javascript" src="htmlElement.js"></script>
-  <script type="text/javascript" src="line chart.js"></script>
-  <script type="text/javascript" src="bar chart.js"></script>
-  <script type="text/javascript" src="pie chart.js"></script>
+  <script type="text/javascript" src="line_chart.js"></script>
+  <script type="text/javascript" src="bar_chart.js"></script>
+  
 </head>
 
 <body style="margin: 0;height: 100vh;overflow-y: hidden;">
@@ -81,11 +81,11 @@
         <div id ='comparison'  style="height: 70%;overflow: auto;margin-bottom: 5px;background-color: #F6F6F6">
           <div class="ui list" style="margin: 8%;">
             <div class="item" style="padding-bottom: 5%;">
-              <label id='seq_num' style="font-size: 18px;">Sequence Number</label>
+              <label style="font-size: 18px;">Sequence Number</label>
               
               <div class="ui action input" style="margin-left: 5%;width: 30%;"> 
-                <input type="text" placeholder="">
-                <button class="ui button" style="padding: 10%;">Go</button>
+                <input  id='seq_num' type="text" placeholder="">
+                <button class="ui button" id= "seq_go_btn" style="padding: 10%;">Go</button>
               </div>
             </div>
 
@@ -114,63 +114,6 @@
 
   </div>  
 </div>
-
-  <!-- previous element
-  <div id='title_container' style="margin-left: 20px;margin-right: 20px;margin-top: 30px" >
-    <h1 class="ui header" style="float: left;">Sequence Recommendation</h1>
-    <div style="float: right;">
-        <label id='dataset'>Dataset</label>
-
-        <div class="ui selection dropdown" id='dataset_dropdown'>
-          <input type="hidden" name="gender">
-          <i class="dropdown icon"></i>
-          <div class="default text">generate</div>
-        </div>
-        
-        <div class="ui button" id='show_seq' data-position="bottom center">
-          Show Sequences
-        </div>
-
-        
-    </div>
-        
-    <div class="ui tabular menu" id='tab'style="clear: left;">
-          <a class="item active" id="Sheet_1">Sheet 1</a>
-          <a class="item" id='add_sheet'> <i class="plus icon"></i></a>
-    </div>
-
-  </div>
-
-
-  <div id='seq_container' class="split split-vertical" style="margin:20px; overflow-y:auto; width: 100%;">
-    <button class="circular ui icon button" id='pre'>
-      <i class="arrow left icon"></i>
-    </button>
-    <button class="circular ui icon button" id='next' >
-      <i class="arrow right icon"></i>
-    </button>
-    <label style="font-size: 18px;"> seq :</label>
-    <label id="seq_num" style="font-size: 18px;"> 0 </label>
- 
-    <label style="font-size: 18px;margin-left: 10px;"> cost :</label>
-    <label id="seq_cost" style="font-size: 18px;"> 0 </label>
-
-  </div>
-
-  <div id = 'data_info' class="split split-vertical"style=" flex-grow : 1;overflow:auto;">
-    <h3 style="margin: 10px;">Generate suquence data info </h3>
-    
-    <label style="padding-left: 10px;font-size: 18px;">total # sequences :</label>
-    <label id="total_seq_num"> 0 </label>
-    <br>
-    <label style="padding-left: 10px;font-size: 18px;"> # of invalid sequences :</label>
-    <label id="num_of_none"> 0 </label>
-    <br>
-    <label style="padding-left: 10px;font-size: 18px;"> # of best sequence :</label>
-    <label id="num_of_best"> 0 </label>
-
-  </div>
--->
 
   <!--Important, related to the tree structure-->
   <div id='chart_temp' style="display:none"></div>
