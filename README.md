@@ -17,14 +17,26 @@
 模型基於[SeqGAN](https://arxiv.org/abs/1609.05473) 進行修改
 ![image](https://user-images.githubusercontent.com/28348725/119102667-dba16380-ba4c-11eb-9a97-6621b45bcfe2.png)
 
+Note:　The code is based on the previous work by [LantaoYU](https://github.com/LantaoYu/SeqGAN)
+
 ### Sample representation
 在VisGAN中，我們把一張統計圖表視為一個字(word)，圖表序列視為一句話(sentence)，再將每張圖轉換為embedding (word embedding)來做訓練
 ![image](https://user-images.githubusercontent.com/28348725/119921772-308b2f80-bfa1-11eb-8164-3ef3c8090fbe.png)
-
-Note:　The code is based on the previous work by [LantaoYU](https://github.com/LantaoYu/SeqGAN)
 
 ## Dataset
 利用previous work,[GraphScape](https://dl.acm.org/doi/10.1145/3025453.3025866), 找出的visualization sequences 當作正確的圖表序列來當training data
 
 ## Result
+生成的結果利用網頁來視覺化呈現
+* Server : python flask
+* Database : mongoDB
+* Client : HTML, javascript, chart.js
+
+![image](https://user-images.githubusercontent.com/28348725/119955509-b07dbd80-bfd2-11eb-9cb7-49a392aa8191.png)
+- 左半邊為 data information
+- 右半邊將 model 生成的圖表資訊(文字) 用視覺化圖表呈現，形成一連串的visulization sequences
+
+**Example**
+
+
 
