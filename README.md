@@ -21,10 +21,11 @@ Note:　The code is based on the previous work by [LantaoYU](https://github.com/
 
 ### Sample representation
 在VisGAN中，我們把一張統計圖表視為一個字(word)，圖表序列視為一句話(sentence)，再將每張圖轉換為embedding (word embedding)來做訓練
+
 ![image](https://user-images.githubusercontent.com/28348725/119921772-308b2f80-bfa1-11eb-8164-3ef3c8090fbe.png)
 
 ## Dataset
-利用previous work,[GraphScape](https://dl.acm.org/doi/10.1145/3025453.3025866), 找出的visualization sequences 當作正確的圖表序列來當training data
+使用 [GraphScape](https://dl.acm.org/doi/10.1145/3025453.3025866) 研究中使用的 `movie.json` 做為 dataset, 並利用[GraphScape](https://dl.acm.org/doi/10.1145/3025453.3025866)提出的方法找出 visualization sequences 當作正確的圖表序列來當training data。
 
 ## Result
 生成的結果利用網頁來視覺化呈現
@@ -37,11 +38,10 @@ Note:　The code is based on the previous work by [LantaoYU](https://github.com/
 - 右半邊將 model 生成的圖表資訊(文字) 用視覺化圖表呈現，形成一連串的visulization sequences
 
 **Example**
-> 本次使用 [GraphScape](https://dl.acm.org/doi/10.1145/3025453.3025866) 研究中使用的 `movie.json` 做為 dataset
 ![image](https://github.com/YuRongTsao/VisGAN/blob/master/img/case1.png)
 
-1. 從 A B C 圖可觀察在不同電影上映月份之爛番茄評分、IMDB投票人次、以及總體營收的趨勢
+1. 從 A B C 圖可觀察在不同電影上映月份之爛番茄評分、IMDB投票人次、以及總體營收的趨勢。
 2. 在 A B 圖中，我們發現爛番茄評分與IMDB投票人次的趨勢大致相同，皆在5-7月和12月有高點。推測為暑假和聖誕檔期推出的電影較多人評分，且評分也較高。圖C的趨勢雖然跟A B 圖相似度較低，但也在暑假和11,12月時營收較高。
-3. 從 D E F 圖可觀察在不同電影類別之爛番茄評分、IMDB投票人次、以及總體營收的數量分布情形
+3. 從 D E F 圖可觀察在不同電影類別之爛番茄評分、IMDB投票人次、以及總體營收的數量分布情形。
 4. 從圖D我們發現爛番茄評分較高的電影類型為紀錄片、音樂劇、或音樂會演出，但從圖E可發現，用戶實際投票的數量，卻是以動作、冒險、驚悚片為主，可得知影評對電影評價的好壞與用戶實際觀賞的電影類型是不同的。從圖E又可發現動作冒險類的營收高於其他類型的電影，與IMDB投票的特徵相同。
 
