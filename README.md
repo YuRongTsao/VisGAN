@@ -38,7 +38,7 @@ Note:　The code is based on the previous work by [LantaoYU](https://github.com/
 
 **Example**
 > 本次使用 [GraphScape](https://dl.acm.org/doi/10.1145/3025453.3025866) 研究中使用的 `movie.json` 做為 dataset
-![image](https://user-images.githubusercontent.com/28348725/119974688-8d113d80-bfe7-11eb-884b-d100f350a39d.png)
+![image](https://github.com/YuRongTsao/VisGAN/blob/master/img/case1.png)
 
 1. 從 A B C 圖可觀察在不同電影上映月份之爛番茄評分、IMDB投票人次、以及總體營收的趨勢
 2. 在 A B 圖中，我們發現爛番茄評分與IMDB投票人次的趨勢大致相同，皆在5-7月和12月有高點。推測為暑假和聖誕檔期推出的電影較多人評分，且評分也較高。圖C的趨勢雖然跟A B 圖相似度較低，但也在暑假和11,12月時營收較高。
